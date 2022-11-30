@@ -9,15 +9,17 @@ import Registration from './Registration';
 
 export default function App({ user }) {
   return (
-    <div className="container">
+    <>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/bascket" element={<Bascket />} />
-        <Route path="/lk" element={<LK user={user} />} />
-        <Route path="/auth" element={<Login />} />
-        <Route path="/auth/reg" element={<Registration />} />
-      </Routes>
-    </div>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/bascket" element={<Bascket />} />
+          <Route path="/lk" element={<LK user={user} />} />
+          <Route path="/auth" element={<Login />} />
+          <Route path="/auth/reg" element={<Registration />} />
+        </Routes>
+      </div>
+    </>
   );
 }
