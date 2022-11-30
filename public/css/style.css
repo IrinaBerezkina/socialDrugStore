@@ -1,0 +1,28 @@
+.mainPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendarAndRandomCard {
+    display: flex;
+}
+
+.drugCard {
+    width: 250px;
+    height:350px
+}
+
+.smallDrugCard {
+    width: 150px;
+    height:250px
+}
+
+.calendar {
+    width: 40%;
+    border: 1px solid red
+}
+
+.randomCards {
+    width: 60%;
+    border: 1px solid red
+}
