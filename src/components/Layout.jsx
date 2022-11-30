@@ -9,7 +9,7 @@ export default function Layout({ initState }) {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes" />
-        {/* <link href="/css/main.css" rel="stylesheet" /> */}
+        <link href="/css/main.css" rel="stylesheet" />
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{

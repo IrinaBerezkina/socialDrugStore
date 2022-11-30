@@ -1,8 +1,12 @@
 import React from 'react';
 import Catalog from './Catalog';
+import Calendar from './Calendar';
 
 export default function MainPage({ drug }) {
   return (
-    <Catalog drug={drug} />
+    <>
+      <Calendar />
+      <Catalog drug={drug} />
+    </>
   );
 }

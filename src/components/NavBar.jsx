@@ -14,7 +14,7 @@ export default function NavBar() {
             <a className="nav-link" href="/lk">Personal account</a>
             <a className="nav-link" href="/auth">Sign in</a>
             <a className="nav-link" href="/auth/reg">Sign up</a>
-            <a className="nav-link" href="/">Log out</a>
+            <a className="nav-link" href="/auth/logout">Log out</a>
           </div>
         </div>
       </div>
