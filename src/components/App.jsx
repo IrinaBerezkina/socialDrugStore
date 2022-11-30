@@ -14,7 +14,7 @@ export default function App({ user }) {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/bascket" element={<Bascket />} />
-        <Route path="/lk" element={<LK />} />
+        <Route path="/lk" element={<LK user={user} />} />
         <Route path="/auth" element={<Login />} />
         <Route path="/auth/reg" element={<Registration />} />
       </Routes>
