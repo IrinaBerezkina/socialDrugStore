@@ -9,7 +9,7 @@ import Registration from './Registration';
 
 export default function App() {
   return (
-    <>
+    <div className="container">
       <NavBar />
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -18,6 +18,6 @@ export default function App() {
         <Route path="/auth" element={<Login />} />
         <Route path="/auth/reg" element={<Registration />} />
       </Routes>
-    </>
+    </div>
   );
 }
