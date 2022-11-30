@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function LK({ user }) {
-  const [input, setInput] = useState({ login: user.login, email: user.email });
+  // useEffect(() => {
+  //   fetch(`/lk/${user.id}`)
+  //     .then((res) => res.json());
+  // }, []);
+  console.log(user, 'USER IN LK');
+  const [input, setInput] = useState({ login: user?.login, email: user?.email });
   const [isEdit, setIsEdit] = useState(false);
 
   const editProxyHandler = () => {
@@ -21,8 +27,9 @@ export default function LK({ user }) {
       },
     );
     if (response.ok) {
-      const { login, email } = await response.json();
-      setInput({ login, email });
+      window.location.href = '/auth';
+      // const { login, email } = await response.json();
+      // setInput({ login, email });
     }
   };
 
@@ -38,42 +45,30 @@ export default function LK({ user }) {
       {!user ? (
         'Hello, Guest!'
       ) : (
-        `Hello, ${user?.login}`
+        `Hello, ${input.login}!`
       )}
-      <div className="card" style={{ width: '18rem' }}>
+      <div className="card mt-3 mb-3" style={{ width: '18rem' }}>
         {isEdit ? (
           <label htmlFor="login">
             Login:
             <input type="text" id="login" name="login" onChange={changeHandler} value={input.login} />
           </label>
         ) : input.login}
-        -
+      </div>
+      <div className="card mt-3 mb-3" style={{ width: '18rem' }}>
         {isEdit ? (
           <label htmlFor="email">
             Email
             <input id="email" type="text" name="email" onChange={changeHandler} value={input.email} />
           </label>
         ) : input.email}
-
+      </div>
+      <div className="mt-3 mb-3">
         {!isEdit && <button type="button" onClick={editProxyHandler}>Edit</button>}
         {isEdit && (<button type="button" onClick={editHandler}>Save</button>)}
 
       </div>
 
-      {/*
-
-      <ul className="list-group list-group-flush">
-        <li className="list-group-item">
-          Login
-          <button type="button">Edit</button>
-        </li>
-        <li className="list-group-item">
-          Email Address
-          <button type="button">Edit</button>
-        </li>
-
-      </ul>
-    </div> */}
     </div>
   );
 }
