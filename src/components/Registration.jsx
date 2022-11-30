@@ -19,7 +19,7 @@ export default function Registration() {
     <form onSubmit={submitHandler}>
       <div className="mb-3">
         <label htmlFor="exampleInput" className="form-label">
-          Login
+          Login гид
           <input name="login" type="text" className="form-control" id="exampleInput" />
         </label>
       </div>
