@@ -6,7 +6,7 @@ import Login from './Login';
 import MainPage from './MainPage';
 import Registration from './Registration';
 
-export default function App() {
+export default function App({ user }) {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
