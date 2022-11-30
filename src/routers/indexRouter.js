@@ -1,10 +1,11 @@
 import express from 'express';
+import { Drug } from '../../db/models';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  const initState = {};
-  res.render('Layout', initState);
+router.get('/', async (req, res) => {
+  const drug = await Drug.findAll();
+  res.render('Layout', { drug });
 });
 
 export default router;

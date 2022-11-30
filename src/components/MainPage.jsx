@@ -1,7 +1,8 @@
 import React from 'react';
+import Catalog from './Catalog';
 
-export default function MainPage() {
+export default function MainPage({ drug }) {
   return (
-    <div>MainPage</div>
+    <Catalog drug={drug} />
   );
 }
