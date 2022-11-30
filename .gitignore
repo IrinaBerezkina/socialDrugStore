@@ -7,8 +7,8 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
-public/app.js
-public/vendor.js
+public/js/app.js
+public/js/vendor.js
 sessions/
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
