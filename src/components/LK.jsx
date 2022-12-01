@@ -6,7 +6,7 @@ export default function LK({ user }) {
   //   fetch(`/lk/${user.id}`)
   //     .then((res) => res.json());
   // }, []);
-  console.log(user, 'USER IN LK');
+  // console.log(user, 'USER IN LK');
   const [input, setInput] = useState({ login: user?.login, email: user?.email });
   const [isEdit, setIsEdit] = useState(false);
 

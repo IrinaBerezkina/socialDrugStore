@@ -16,7 +16,7 @@ export default function App({
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage drug={drug} user={user} />} />
-          <Route path="/bascket" element={<Bascket drugs={drugs} />} />
+          <Route path="/bascket" element={<Bascket user={user} drugs={drugs} />} />
           <Route path="/lk" element={<LK user={user} />} />
           <Route path="/auth" element={<Login />} />
           <Route path="/auth/reg" element={<Registration />} />
