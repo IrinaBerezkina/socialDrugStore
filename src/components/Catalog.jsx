@@ -44,7 +44,7 @@ export default function Catalog({ drug, user }) {
 
   return (
     <>
-      <span className="input-group-text" id="basic-addon1">Сортировка по цене</span>
+      <span className="input-group-text" id="basic-addon1">Выбор по цене</span>
       <select
         defaultValue={false}
         onChange={changeHahdler}

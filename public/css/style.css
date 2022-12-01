@@ -1,3 +1,7 @@
+* {
+    font-family: 'Caveat', cursive !important
+}
+
 .mainPage {
     display: flex;
     flex-direction: column;

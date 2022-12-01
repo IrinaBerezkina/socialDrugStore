@@ -12,6 +12,9 @@ export default function Layout({ initState }) {
         <link href="/css/main.css" rel="stylesheet" />
         <link href="/css/style.css" rel="stylesheet" />
         <link href="/css/authReg.css" rel="stylesheet" />
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+        </style>
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
