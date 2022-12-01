@@ -16,7 +16,7 @@ export default function Registration() {
   };
 
   return (
-    <form onSubmit={submitHandler} className="body">
+    <form onSubmit={submitHandler} className="loginPage">
       <div className="form">
 
         <h1 className="form__title">Регистрация</h1>

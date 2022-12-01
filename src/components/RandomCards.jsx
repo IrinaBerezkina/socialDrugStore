@@ -23,9 +23,8 @@ export default function RandomCards({ drug, data }) {
       headers: {
         'content-Type': 'application/json',
       },
-      body: JSON.stringify({ id: drugId }),
+      body: JSON.stringify({ id: drugId, is_free: true }),
     });
-    console.log('itt worksssssssssssssssssssssss');
   };
 
   return (

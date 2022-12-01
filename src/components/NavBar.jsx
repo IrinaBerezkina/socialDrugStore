@@ -1,10 +1,11 @@
 import React from 'react';
 
 export default function NavBar({ user }) {
+  console.log(user);
   return (
     <nav className="navbar navbar-expand-lg navBar">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">SocialAptecka</a>
+        <a className="navbar-brand" href={user ? '/' : '/auth'}>SocialAptecka</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
         </button>

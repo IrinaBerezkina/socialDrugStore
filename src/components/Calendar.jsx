@@ -5,33 +5,35 @@ export default function Calendar({ data, changeHandler }) {
     <div className="form-group">
       <h5 className="heading">Выбери день, в который ты хочешь получить бесплатные лекарства</h5>
       <div className="grid">
-        <div className="0">
-          <div className="controls">
-            <input
-              type="date"
-              onChange={(e) => changeHandler(e)}
-              id="arrive"
-              className="floatLabel"
-              name="data"
-              value={data.data}
-            />
-            {!data.data
-              ? (
-                <label htmlFor="arrive" className="label-date">
-                  <i className="fa fa-calendar" />
-                  Дата
-                </label>
-              )
-              : (
-                <label htmlFor="arrive" className="label-date">
-                  <i className="fa fa-calendar" />
+        <div className="controlsMain">
+          <div className="controlsNotMain">
+            <div className="controls">
+              <input
+                type="date"
+                onChange={(e) => changeHandler(e)}
+                id="arrive"
+                className="floatLabel"
+                name="data"
+                value={data.data}
+              />
+              {!data.data
+                ? (
+                  <label htmlFor="arrive" className="label-date">
+                    <i className="fa fa-calendar" />
+                    Дата
+                  </label>
+                )
+                : (
+                  <label htmlFor="arrive" className="label-date">
+                    <i className="fa fa-calendar" />
 
-                  {data.data}
-                </label>
-              )}
+                    {data.data}
+                  </label>
+                )}
 
+            </div>
           </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ad, beatae porro consequuntur delectus hic eius eum suscipit dicta, voluptate error accusamus fugit ab rerum? Laboriosam excepturi, deserunt enim earum est tenetur porro nulla rem esse ducimus nostrum reprehenderit doloremque, natus ut blanditiis vel ab praesentium minus aliquam distinctio! Totam.</p>
+          <p>Добрый день, дорогой друг! Мы рады, что ты решил воспользоваться нашим сервисом покупки лекарств! Наша миссия - помочь тем, кто в этом нуждается! Именно поэтому в нашем приложении вы увидите только демократичные цены. А также каждый день вы можете выбрать лекарство, в котором вы нуждаетесь и мы его вам подарим!</p>
         </div>
       </div>
     </div>

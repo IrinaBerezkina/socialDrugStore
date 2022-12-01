@@ -15,7 +15,7 @@ export default function App({
   return (
     <>
       <NavBar user={user} />
-      <div className="container-fluid">
+
         <Routes>
           <Route path="/" element={<MainPage drug={drug} user={user} />} />
           <Route path="/bascket" element={<Bascket user={user} drugs={drugs} />} />
@@ -23,7 +23,6 @@ export default function App({
           <Route path="/auth" element={<Backgroundone />} />
           <Route path="/auth/reg" element={<Background />} />
         </Routes>
-      </div>
     </>
   );
 }

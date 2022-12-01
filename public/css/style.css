@@ -1,6 +1,36 @@
+
 .mainPage {
     display: flex;
     flex-direction: column;
+    margin: auto;
+   
+    justify-content: center;
+
+}
+
+.smallCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+}
+
+.bigCont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.backgroundCard{
+    display: flex;
+  justify-content: center;
+    background-color: #0080805f;
+}
+
+.backgroundCatalog{
+    display: flex;
+    justify-content: center;
+    background-color: white;
 }
 
 .calendarAndRandomCard {
@@ -14,28 +44,29 @@
     height: 370px
 }
 
+.drugCard button {
+    background-color: #008080;
+}
+
 .smallDrugCard {
-    width: 230px;
+    width: 200px;
     height: 250px
 }
 
 .calendar {
     width: 40%;
-    border: 1px solid red
+    margin-right: 40px;
 }
 
 .randomCards {
     display: flex;
     justify-content: space-around;
     width: 60%;
-    border: 1px solid red
 }
 
 .flexForRandom {
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 40px;
+    align-self: center;
 }
 
 .drugCard img {
@@ -109,5 +140,32 @@ button:hover {
 }
 
 .oneCard {
-    border: 5px solid rgb(208, 18, 18);
+    display: flex;
+    justify-content: center;
+}
+
+.filter-group {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 40px;
+}
+
+.filters{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bascketSummary{
+    margin: 30px 15px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.summary {
+margin-right: 20px;
 }
