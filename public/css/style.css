@@ -5,6 +5,8 @@
 
 .calendarAndRandomCard {
     display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .drugCard {
@@ -29,6 +31,13 @@
     border: 1px solid red
 }
 
+.flexForRandom {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+}
+
 .drugCard img {
     width: 90%;
     height: 100%;
@@ -48,6 +57,9 @@
 }
 
 .smallDrugCard button {
+    background-color: #008080;
+    border: 1px solid antiquewhite;
+
     width: 60%;
     height: 35px;
     margin: 10px 0;
@@ -76,7 +88,19 @@
 
 .smallDrugCard h5 {
     font-size: 15px;
+
 }
+
 .navBar {
     background-color: #008080;
 }
+
+.nav-link, a {
+    color:antiquewhite !important
+}
+
+button:hover {
+    background-color: rgb(190, 138, 71) !important;
+    border: 1px solid antiquewhite !important;
+}
+

@@ -18,7 +18,7 @@ export default function RandomCards({ drug, data }) {
   }, [data]);
 
   return (
-    <div>
+    <div className="flexForRandom">
       {randomDrugs?.map((el) => (
         <DrugCard
           key={el.id}
