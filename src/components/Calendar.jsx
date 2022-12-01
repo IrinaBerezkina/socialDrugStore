@@ -19,7 +19,7 @@ export default function Calendar({ data, changeHandler }) {
               ? (
                 <label htmlFor="arrive" className="label-date">
                   <i className="fa fa-calendar" />
-                  Data
+                  Дата
                 </label>
               )
               : (
