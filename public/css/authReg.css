@@ -1,9 +1,19 @@
-.body {
+@font-face {
+    font-family: PT Sans Narrow;
+    src: url(fonts/PTSansNarrow-Regular);
+}
+
+* {
+    font-family: 'PT Sans Narrow', sans-serif;;
+}
+ 
+.loginPage {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     z-index: -1;
+    padding: 0px !important
 }
 
 .form {
@@ -86,5 +96,4 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
 }

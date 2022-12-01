@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   Bascket.init({
     user_id: DataTypes.INTEGER,
     drug_id: DataTypes.INTEGER,
+    is_free: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'Bascket',

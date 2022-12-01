@@ -10,16 +10,14 @@ router.get('/', isAuth, async (req, res) => {
       where: { user_id: req.session?.user?.id },
       include: Drug,
     })));
-    console.log(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,', drugsAll);
-
     const drugs = drugsAll.map((el) => ({
       id: el.Drug.id,
       title: el.Drug.title,
       price: el.Drug.price,
       img: el.Drug.img,
+      is_free: el.is_free,
     }));
 
-    // console.log('-------------------------------------------------', drugs);
     const initState = { drugs };
     res.render('Layout', initState);
   } catch (error) {
@@ -28,9 +26,9 @@ router.get('/', isAuth, async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const { id } = req.body;
+  const { id, is_free } = req.body;
   try {
-    await Bascket.create({ user_id: req.session?.user?.id, drug_id: id });
+    await Bascket.create({ user_id: req.session?.user?.id, drug_id: id, is_free });
     res.sendStatus(200);
   } catch (error) {
     console.log(error);

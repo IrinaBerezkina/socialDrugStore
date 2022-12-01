@@ -3,6 +3,17 @@
   text-align: left;
   position: relative;
   width: 250px;
+  
+}
+
+.controlsMain {
+
+}
+
+.controlsNotMain{
+  display: flex;
+  justify-content: center;
+
 }
 
 .controls input[type="date"],
@@ -79,7 +90,7 @@
 }
 
 .grid {
-  background: white;
+  background: #aed0cf;
 }
 .grid:after {
   Or @extend clearfix
