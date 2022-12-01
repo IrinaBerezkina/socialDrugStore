@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DrugCard from './DrugCard';
 
-export default function RandomCards({ drug }) {
+export default function RandomCards({ drug, data }) {
   const [randomDrugs, setRandomDrugs] = useState(drug);
 
   const getRandomCards = (arr) => {
@@ -15,7 +15,7 @@ export default function RandomCards({ drug }) {
 
   useEffect(() => {
     setRandomDrugs(getRandomCards(drug));
-  }, []);
+  }, [data]);
 
   return (
     <div>

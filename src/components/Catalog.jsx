@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DrugCard from './DrugCard';
 
-export default function Catalog({ drug }) {
+export default function Catalog({ drug, user }) {
   const [descending, setDescending] = useState(false);
   const [currentDrugs, setCurrentDrugs] = useState(drug);
 
@@ -30,6 +30,18 @@ export default function Catalog({ drug }) {
     // }));
   }, [descending]);
 
+  const submitHandler = async (e, drugId) => {
+    e.preventDefault();
+    const response = await fetch('/bascket', {
+      method: 'POST',
+      headers: {
+        'content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id: drugId }),
+    });
+    // console.log(response);
+  };
+
   return (
     <>
       <span className="input-group-text" id="basic-addon1">Сортировка по цене</span>
@@ -48,6 +60,8 @@ export default function Catalog({ drug }) {
           <DrugCard
             key={el.id}
             drug={el}
+            submitHandler={submitHandler}
+
           />
         ))}
       </div>

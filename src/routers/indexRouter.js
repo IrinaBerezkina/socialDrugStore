@@ -9,9 +9,9 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/drugs', async (req, res) => {
-  const { descending } = req.params;
+  const { descending } = req.query;
   let drug;
-  if (descending) {
+  if (descending === 'true') {
     drug = await Drug.findAll({ order: [['price', 'DESC']] });
   } else {
     drug = await Drug.findAll({ order: [['price', 'ASC']] });

@@ -17,6 +17,7 @@ module.exports = {
           },
           key: 'id',
         },
+        onDelete: 'CASCADE',
       },
       drug_id: {
         type: Sequelize.INTEGER,
@@ -27,6 +28,7 @@ module.exports = {
           },
           key: 'id',
         },
+        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,
