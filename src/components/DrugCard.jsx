@@ -3,8 +3,9 @@ import React from 'react';
 export default function DrugCard({
   drug, isSmall, submitHandler,
 }) {
+  const sellPrice = Math.floor(drug.price * 0.8);
   return (
-    <div className="col-4 mt-5">
+    <div className="col-4 mt-5 oneCard">
       <div className={
         isSmall
           ? 'card smallDrugCard' : 'card drugCard'
@@ -20,13 +21,22 @@ export default function DrugCard({
           {isSmall
             ? ''
             : (
-              <p className="card-text">
-                Цена:
-                {' '}
-                {drug.price}
-                {' '}
-                руб.
-              </p>
+              <>
+                <p className="card-text te">
+                  Цена:
+                  {' '}
+                  {drug.price}
+                  {' '}
+                  руб.
+                </p>
+                <p className="card-text">
+                  Цена со скидкой:
+                  {' '}
+                  {sellPrice}
+                  {' '}
+                  руб.
+                </p>
+              </>
             )}
 
           <button

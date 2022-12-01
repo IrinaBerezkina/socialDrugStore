@@ -10,8 +10,8 @@
 }
 
 .drugCard {
-    width: 250px;
-    height: 350px
+    width: 300px;
+    height: 370px
 }
 
 .smallDrugCard {
@@ -70,7 +70,7 @@
 .drugCard button {
     margin: 10px 0;
     position: absolute;
-    top: 280px;
+    bottom: 2%
 }
 
 .imageDiv {
@@ -83,7 +83,6 @@
 .textDiv {
     width: 90%;
     height: 30%;
-    margin: 10px 0;
 }
 
 .smallDrugCard h5 {
@@ -95,8 +94,9 @@
     background-color: #008080;
 }
 
-.nav-link, a {
-    color:antiquewhite !important
+.nav-link,
+a {
+    color: antiquewhite !important
 }
 
 button:hover {
@@ -104,3 +104,10 @@ button:hover {
     border: 1px solid antiquewhite !important;
 }
 
+.catalog {
+    padding: 30px;
+}
+
+.oneCard {
+    border: 5px solid rgb(208, 18, 18);
+}
