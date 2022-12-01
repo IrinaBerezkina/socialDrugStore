@@ -11,6 +11,7 @@ export default function Layout({ initState }) {
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes" />
         <link href="/css/main.css" rel="stylesheet" />
         <link href="/css/style.css" rel="stylesheet" />
+        <link href="/css/authReg.css" rel="stylesheet" />
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
