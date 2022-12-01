@@ -7,17 +7,19 @@ import MainPage from './MainPage';
 import NavBar from './NavBar';
 import Registration from './Registration';
 
-export default function App({ user }) {
+export default function App({ user, drug, drugs }) {
   return (
-    <div className="container">
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/bascket" element={<Bascket />} />
-        <Route path="/lk" element={<LK user={user} />} />
-        <Route path="/auth" element={<Login />} />
-        <Route path="/auth/reg" element={<Registration />} />
-      </Routes>
-    </div>
+    <>
+      <NavBar user={user} />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<MainPage drug={drug} />} />
+          <Route path="/bascket" element={<Bascket drugs={drugs} />} />
+          <Route path="/lk" element={<LK user={user} />} />
+          <Route path="/auth" element={<Login />} />
+          <Route path="/auth/reg" element={<Registration />} />
+        </Routes>
+      </div>
+    </>
   );
 }

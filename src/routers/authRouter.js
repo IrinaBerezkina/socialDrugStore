@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/reg', async (req, res) => {
+  console.log(req.body, 'reqbody');
   const { login, email, pass: password } = req.body;
   const pass = await bcrypt.hash(password, 7);
   const currUser = await User.create({ login, email, pass });
@@ -33,6 +34,7 @@ router.post('/', async (req, res) => {
   if (compare) {
     req.session.user = {
       id: currUser.id,
+      login: currUser.login,
       email: currUser.email,
     };
     res.sendStatus(200);

@@ -12,120 +12,115 @@ module.exports = {
     */
     await queryInterface.bulkInsert('Drugs', [
       {
-        title: "Ношпа",
+        title: 'Ношпа',
         price: 126,
-        img: '../../public/images/noshpa.png',
+        img: '/images/noshpa.png',
         createdAt: new Date(),
-        updatedAt: new Date(),
+        updatedAt: new Date(),    await queryInterface.bulkDelete('P', null, {});
       },
       {
-        title: "Анальгин",
+        title: 'Анальгин',
         price: 57,
-        img: '../../public/images/analgin.png',
+        img: '/images/analgin.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Парацетамол",
+        title: 'Парацетамол',
         price: 81,
-        img: '../../public/images/paracetamol.png',
+        img: '/images/paracetamol.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Гриппферон",
+        title: 'Гриппферон',
         price: 287,
-        img: '../../public/images/gripferon.png',
+        img: '/images/gripferon.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Ацикловир",
+        title: 'Ацикловир',
         price: 129,
-        img: '../../public/images/aciklovir.png',
+        img: '/images/aciklovir.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Ибупрофен",
+        title: 'Ибупрофен',
         price: 149,
-        img: ,
+        img: '/images/ipyprofen.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Акридерм",
+        title: 'Акридерм',
         price: 91,
-        img: ,
+        img: '/images/akriderm.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Глицин",
+        title: 'Глицин',
         price: 47,
-        img: ,
+        img: '/images/glicin.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Экзодерил",
+        title: 'Экзодерил',
         price: 622,
-        img: ,
+        img: '/images/ekzoderil.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Нимесил",
+        title: 'Нимесил',
         price: 464,
-        img: ,
+        img: '/images/nimesil.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Гексорал",
+        title: 'Гексорал',
         price: 417,
-        img: ,
+        img: '/images/geksoral.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Уголь активированный",
+        title: 'Уголь активированный',
         price: 42,
-        img: ,
+        img: '/images/ygol.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Нексиум",
+        title: 'Нексиум',
         price: 247,
-        img: ,
+        img: '/images/neksium.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Ингавирин",
+        title: 'Ингавирин',
         price: 623,
-        img: ,
+        img: '/images/ingavirin.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        title: "Арбидол",
+        title: 'Арбидол',
         price: 203,
-        img: ,
+        img: '/images/arbidol.png',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+
     ], {});
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
     await queryInterface.bulkDelete('Drugs', null, {});
   },
 };
