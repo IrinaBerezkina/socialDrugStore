@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function NavBar() {
+export default function NavBar({ user }) {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -10,11 +10,18 @@ export default function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-link active" aria-current="page" href="/bascket">Basket</a>
-            <a className="nav-link" href="/lk">Personal account</a>
-            <a className="nav-link" href="/auth">Sign in</a>
-            <a className="nav-link" href="/auth/reg">Sign up</a>
-            <a className="nav-link" href="/auth/logout">Log out</a>
+            {!user ? (
+              <>
+                <a className="nav-link" href="/auth">Sign in</a>
+                <a className="nav-link" href="/auth/reg">Sign up</a>
+              </>
+            ) : (
+              <>
+                <a className="nav-link active" aria-current="page" href="/bascket">Basket</a>
+                <a className="nav-link" href="/lk">Personal account</a>
+                <a className="nav-link" href="/auth/logout">Log out</a>
+              </>
+            )}
           </div>
         </div>
       </div>
