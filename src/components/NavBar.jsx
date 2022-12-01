@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NavBar({ user }) {
   return (
-    <nav className="navbar navBar">
+    <nav className="navbar navbar-expand-lg navBar">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">SocialAptecka</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
