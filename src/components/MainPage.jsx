@@ -1,8 +1,12 @@
 import React from 'react';
-import Calendar from './Calendar';
+import Catalog from './Catalog';
+import CalendarAndRandomCard from './CalendarAndRandomCard';
 
-export default function MainPage() {
+export default function MainPage({ drug }) {
   return (
-    <Calendar />
+    <div className="mainPage">
+      <CalendarAndRandomCard drug={drug} />
+      <Catalog drug={drug} />
+    </div>
   );
 }
