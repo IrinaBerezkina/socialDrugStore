@@ -39,7 +39,7 @@ export default function Catalog({ drug, user }) {
       },
       body: JSON.stringify({ id: drugId }),
     });
-    // console.log(response);
+    console.log('itt worksssssssssssssssssssssss');
   };
 
   return (

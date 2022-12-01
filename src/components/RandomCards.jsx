@@ -16,6 +16,17 @@ export default function RandomCards({ drug, data }) {
   useEffect(() => {
     setRandomDrugs(getRandomCards(drug));
   }, [data]);
+  const submitHandler = async (e, drugId) => {
+    e.preventDefault();
+    const response = await fetch('/bascket', {
+      method: 'POST',
+      headers: {
+        'content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id: drugId }),
+    });
+    console.log('itt worksssssssssssssssssssssss');
+  };
 
   return (
     <div className="flexForRandom">
@@ -24,6 +35,7 @@ export default function RandomCards({ drug, data }) {
           key={el.id}
           drug={el}
           isSmall
+          submitHandler={submitHandler}
         />
       ))}
     </div>
