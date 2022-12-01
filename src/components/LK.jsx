@@ -16,20 +16,22 @@ export default function LK({ user }) {
 
   const editHandler = async () => {
     setIsEdit((prev) => !prev);
-    const response = await fetch(
-      `/lk/${user.id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
+    if ((input.login && input.email) !== (user.login && user.email)) {
+      const response = await fetch(
+        `/lk/${user.id}`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(input),
         },
-        body: JSON.stringify(input),
-      },
-    );
-    if (response.ok) {
-      window.location.href = '/auth';
-      // const { login, email } = await response.json();
-      // setInput({ login, email });
+      );
+      if (response.ok) {
+        window.location.href = '/auth';
+        // const { login, email } = await response.json();
+        // setInput({ login, email });
+      }
     }
   };
 

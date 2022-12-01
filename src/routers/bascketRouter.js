@@ -1,5 +1,5 @@
 import express from 'express';
-import Drug, { Bascket } from '../../db/models';
+import { Bascket, Drug } from '../../db/models';
 import isAuth from '../middlewares/isAuth';
 
 const router = express.Router();
