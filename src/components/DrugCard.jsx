@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function DrugCard({ drug, isSmall }) {
+export default function DrugCard({
+  drug, isSmall, submitHandler,
+}) {
   return (
     <div className="col-4 mt-5">
       <div className={
@@ -24,6 +26,7 @@ export default function DrugCard({ drug, isSmall }) {
             )}
 
           <button
+            onClick={(e) => submitHandler(e, drug.id)}
             className="btn btn-primary"
             type="button"
           >
