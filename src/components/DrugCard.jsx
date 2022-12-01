@@ -11,13 +11,18 @@ export default function DrugCard({ drug, isSmall }) {
         <img src={drug.img} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{drug.title}</h5>
-          <p className="card-text">
-            Цена:
-            {' '}
-            {drug.price}
-            {' '}
-            руб.
-          </p>
+          {isSmall
+            ? ''
+            : (
+              <p className="card-text">
+                Цена:
+                {' '}
+                {drug.price}
+                {' '}
+                руб.
+              </p>
+            )}
+
           <button
             className="btn btn-primary"
             type="button"
