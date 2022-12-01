@@ -9,12 +9,12 @@
 
 .drugCard {
     width: 250px;
-    height:350px
+    height: 350px
 }
 
 .smallDrugCard {
     width: 150px;
-    height:250px
+    height: 250px
 }
 
 .calendar {
@@ -25,4 +25,23 @@
 .randomCards {
     width: 60%;
     border: 1px solid red
+}
+
+.drugCard img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.smallDrugCard img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.smallDrugCard button {
+    width: 80%;
+    height: 30%;
 }
