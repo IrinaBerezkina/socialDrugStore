@@ -7,7 +7,9 @@ import MainPage from './MainPage';
 import NavBar from './NavBar';
 import Registration from './Registration';
 
-export default function App({ user, drug, drugs }) {
+export default function App({
+  user, drug, drugs,
+}) {
   return (
     <>
       <NavBar user={user} />

@@ -13,19 +13,24 @@ export default function DrugCard({
         <img src={drug.img} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{drug.title}</h5>
-          <p className="card-text">
-            Цена:
-            {' '}
-            {drug.price}
-            {' '}
-            руб.
-          </p>
+          {isSmall
+            ? ''
+            : (
+              <p className="card-text">
+                Цена:
+                {' '}
+                {drug.price}
+                {' '}
+                руб.
+              </p>
+            )}
+
           <button
             onClick={(e) => submitHandler(e, drug.id)}
             className="btn btn-primary"
             type="button"
           >
-            Добавить в корзину
+            {isSmall ? 'Корзина' : 'Добавить в корзину'}
           </button>
         </div>
       </div>
