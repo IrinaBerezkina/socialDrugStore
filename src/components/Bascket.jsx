@@ -22,13 +22,13 @@ export default function Bascket({ drugs, user }) {
     <>
       <div className="row mt=5 mb=15">
         <div>
-          <h5>
+          <h4>
             {!user ? (
               'Hello, Guest!'
             ) : (
               `Dear ${input.login}, here is your Basket:`
             )}
-          </h5>
+          </h4>
         </div>
         {currentDrugs?.map((el) => (
           <OneDrug
