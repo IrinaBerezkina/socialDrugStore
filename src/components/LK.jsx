@@ -16,7 +16,8 @@ export default function LK({ user }) {
 
   const editHandler = async () => {
     setIsEdit((prev) => !prev);
-    if ((input.login && input.email) !== (user.login && user.email)) {
+    // if ((input.login !== user.login) || (input.email !== user.email)) {
+    if ((input.login || input.email) !== (user.login || user.email)) {
       const response = await fetch(
         `/lk/${user.id}`,
         {

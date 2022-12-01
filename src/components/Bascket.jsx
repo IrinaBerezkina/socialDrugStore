@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import OneDrug from './OneDrug';
 
 export default function Bascket({ drugs, user }) {
@@ -26,7 +26,7 @@ export default function Bascket({ drugs, user }) {
             {!user ? (
               'Hello, Guest!'
             ) : (
-              `Dear ${input.login}, here is your Basket:`
+              `Dear ${input?.login}, here is your Basket:`
             )}
           </h4>
         </div>
@@ -41,7 +41,7 @@ export default function Bascket({ drugs, user }) {
       <div>
         <h5>
           Total Amount:
-          {drugs.reduce((acc, el) => el.price + acc, 0)}
+          {currentDrugs.reduce((acc, el) => el.price + acc, 0)}
           руб.
         </h5>
       </div>

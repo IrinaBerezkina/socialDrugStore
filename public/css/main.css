@@ -2,6 +2,7 @@
 .controls {
   text-align: left;
   position: relative;
+  width: 250px;
 }
 
 .controls input[type="date"],
@@ -44,7 +45,7 @@
 
 .controls select:focus + label,
 .controls select:hover + label {
-  color: #0018cc;
+  color: #008080;
   cursor: text;
 }
 

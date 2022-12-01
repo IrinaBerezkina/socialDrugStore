@@ -10,7 +10,6 @@ router.get('/', isAuth, async (req, res) => {
       where: { user_id: req.session?.user?.id },
       include: Drug,
     })));
-    console.log(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,', drugsAll);
 
     const drugs = drugsAll.map((el) => ({
       id: el.Drug.id,
@@ -19,7 +18,6 @@ router.get('/', isAuth, async (req, res) => {
       img: el.Drug.img,
     }));
 
-    // console.log('-------------------------------------------------', drugs);
     const initState = { drugs };
     res.render('Layout', initState);
   } catch (error) {

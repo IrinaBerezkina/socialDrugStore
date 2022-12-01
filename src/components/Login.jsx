@@ -16,20 +16,24 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className="mb-3">
-        <label htmlFor="exampleInput" className="form-label">
-          Логин
-          <input name="login" type="text" className="form-control" id="exampleInput" />
-        </label>
+    <form onSubmit={submitHandler} className="body">
+      <div className="form">
+
+        <h1 className="form__title">Авторизация</h1>
+
+        <div className="form__group">
+          <input name="login" type="text" className="form__input" placeholder=" " />
+          <label className="form__label">Логин</label>
+        </div>
+
+        <div className="form__group">
+          <input name="pass" type="password" className="form__input" placeholder=" " />
+          <label className="form__label">Пароль</label>
+        </div>
+
+        <button type="submit" className="form__button">Войти</button>
+
       </div>
-      <div className="mb-3">
-        <label htmlFor="exampleInputPassword1" className="form-label">
-          Пароль
-          <input name="pass" type="password" className="form-control" id="exampleInputPassword1" />
-        </label>
-      </div>
-      <button type="submit" className="btn btn-primary">Войти</button>
     </form>
   );
 }

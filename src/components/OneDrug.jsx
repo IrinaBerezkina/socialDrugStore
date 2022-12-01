@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function OneDrug({ drug, deleteHandler }) {
-  console.log(drug);
+  // console.log(drug);
   return (
     <div className="col-4 mt-5">
 
