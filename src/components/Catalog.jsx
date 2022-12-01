@@ -55,7 +55,7 @@ export default function Catalog({ drug, user }) {
         <option value>По убыванию</option>
 
       </select>
-      <div className="row mt=5">
+      <div className="row mt=5 catalog">
         {currentDrugs?.map((el) => (
           <DrugCard
             key={el.id}
