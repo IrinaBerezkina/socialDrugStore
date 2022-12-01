@@ -9,13 +9,15 @@ import NavBar from './NavBar';
 import Background from './Background';
 import Backgroundone from './Backgroundone';
 
-export default function App({ user, drug, drugs }) {
+export default function App({
+  user, drug, drugs,
+}) {
   return (
     <>
       <NavBar user={user} />
       <div className="container-fluid">
         <Routes>
-          <Route path="/" element={<MainPage drug={drug} />} />
+          <Route path="/" element={<MainPage drug={drug} user={user} />} />
           <Route path="/bascket" element={<Bascket drugs={drugs} />} />
           <Route path="/lk" element={<LK user={user} />} />
           <Route path="/auth" element={<Backgroundone />} />
