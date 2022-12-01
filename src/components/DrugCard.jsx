@@ -8,9 +8,13 @@ export default function DrugCard({ drug, isSmall }) {
           ? 'card smallDrugCard' : 'card drugCard'
       }
       >
-        <img src={drug.img} className="card-img-top" alt="..." />
+        <div className="imageDiv">
+          <img src={drug.img} className="card-img-top" alt="..." />
+        </div>
         <div className="card-body">
-          <h5 className="card-title">{drug.title}</h5>
+          <div className="textDiv">
+            <h5 className="card-title">{drug.title}</h5>
+          </div>
           {isSmall
             ? ''
             : (
