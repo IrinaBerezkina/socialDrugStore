@@ -16,26 +16,29 @@ export default function Registration() {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className="mb-3">
-        <label htmlFor="exampleInput" className="form-label">
-          Login
-          <input name="login" type="text" className="form-control" id="exampleInput" />
-        </label>
+    <form onSubmit={submitHandler} className="body">
+      <div className="form">
+
+        <h1 className="form__title">Регистрация</h1>
+
+        <div className="form__group">
+          <input name="login" type="text" className="form__input" placeholder=" " />
+          <label className="form__label">Логин</label>
+        </div>
+
+        <div className="form__group">
+          <input name="email" type="email" className="form__input" placeholder=" " />
+          <label className="form__label">Адрес электронной почты</label>
+        </div>
+
+        <div className="form__group">
+          <input name="pass" type="password" className="form__input" placeholder=" " />
+          <label className="form__label">Пароль</label>
+        </div>
+
+        <button type="submit" className="form__button">Регистрация</button>
+
       </div>
-      <div className="mb-3">
-        <label htmlFor="exampleInputEmail1" className="form-label">
-          Адрес электронной почты
-          <input name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-        </label>
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleInputPassword1" className="form-label">
-          Пароль
-          <input name="pass" type="password" className="form-control" id="exampleInputPassword1" />
-        </label>
-      </div>
-      <button type="submit" className="btn btn-primary">Регистрация</button>
     </form>
   );
 }

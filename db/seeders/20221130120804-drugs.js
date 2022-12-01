@@ -16,7 +16,7 @@ module.exports = {
         price: 126,
         img: '/images/noshpa.png',
         createdAt: new Date(),
-        updatedAt: new Date(),    await queryInterface.bulkDelete('P', null, {});
+        updatedAt: new Date(),
       },
       {
         title: 'Анальгин',
