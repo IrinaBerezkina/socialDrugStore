@@ -5,7 +5,7 @@ import CalendarAndRandomCard from './CalendarAndRandomCard';
 export default function MainPage({ drug }) {
   return (
     <div className="mainPage">
-      <CalendarAndRandomCard drug={drug} />
+      <CalendarAndRandomCard drug={drug}  />
       <Catalog drug={drug} />
     </div>
   );
