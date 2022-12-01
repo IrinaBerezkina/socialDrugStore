@@ -16,7 +16,7 @@ module.exports = {
         price: 126,
         img: '/images/noshpa.png',
         createdAt: new Date(),
-        updatedAt: new Date(),
+        updatedAt: new Date(),    await queryInterface.bulkDelete('P', null, {});
       },
       {
         title: 'Анальгин',
@@ -116,16 +116,11 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+
     ], {});
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
     await queryInterface.bulkDelete('Drugs', null, {});
   },
 };
