@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function DrugCard({
-  drug, isSmall, submitHandler, deleteHandler,
+  drug, isSmall, submitHandler, deleteHandler, isFreeBasket,
 }) {
   const sellPrice = Math.floor(drug.price * 0.8);
   return (
@@ -29,14 +29,14 @@ export default function DrugCard({
                 <p className="card-text te">
                   Цена:
                   {' '}
-                  {drug.price}
+                  {isFreeBasket ? 0 : drug.price}
                   {' '}
                   руб.
                 </p>
                 <p className="card-text">
                   Цена со скидкой:
                   {' '}
-                  {sellPrice}
+                  {isFreeBasket ? 0 : sellPrice}
                   {' '}
                   руб.
                 </p>

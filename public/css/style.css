@@ -13,7 +13,6 @@
     flex-direction: column;
     justify-content: center;
     width: 75%;
-    border: 1px solid red;
 }
 
 .bigCont {
@@ -56,6 +55,7 @@
 
 .calendar {
     width: 40%;
+    margin-right: 40px;
 }
 
 .randomCards {

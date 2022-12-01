@@ -52,6 +52,7 @@ export default function Bascket({ drugs, user }) {
               key={el.id}
               drug={el}
               deleteHandler={deleteHandler}
+              isFreeBasket
             />
           ))}
         </div>
