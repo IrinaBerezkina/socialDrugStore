@@ -13,7 +13,7 @@
 }
 
 .smallDrugCard {
-    width: 200px;
+    width: 230px;
     height: 250px
 }
 
@@ -30,16 +30,16 @@
 }
 
 .drugCard img {
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 100%;
     object-fit: contain;
-    padding: 20px;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .smallDrugCard img {
-    width: 80%;
+    width: 100%;
     height: 150px;
     object-fit: contain;
     padding: 10px;
@@ -48,8 +48,35 @@
 }
 
 .smallDrugCard button {
-    width: 80%;
-    height: 50%;
+    width: 60%;
+    height: 35px;
+    margin: 10px 0;
+    position: absolute;
+    bottom: 3px;
+}
+
+.drugCard button {
+    margin: 10px 0;
+    position: absolute;
+    top: 280px;
+}
+
+.imageDiv {
+    width: 100%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textDiv {
+    width: 90%;
+    height: 30%;
+    margin: 10px 0;
+}
+
+.smallDrugCard h5 {
+    font-size: 15px;
 }
 .navBar {
     background-color: #008080;
+}
