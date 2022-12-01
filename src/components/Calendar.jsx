@@ -9,8 +9,8 @@ export default function Calendar() {
   return (
     <div className="form-group">
       <h4 className="heading">Choose date for free medicine</h4>
-      <div className="grid">
-        <div className="col-1-4 col-1-4-sm">
+      <div>
+        <div>
           <div className="controls">
             <input
               type="date"
