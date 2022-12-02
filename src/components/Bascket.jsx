@@ -5,7 +5,6 @@ import OneDrug from './OneDrug';
 export default function Bascket({ drugs, user }) {
   const [currentDrugs, setCurrentDrugs] = useState(drugs);
   const [input, setInput] = useState({ login: user?.login, email: user?.email });
-  console.log(drugs);
 
   const deleteHandler = async (drugId) => {
     await fetch(`/bascket/del/${drugId}`, {
@@ -14,6 +13,18 @@ export default function Bascket({ drugs, user }) {
       .then((res) => {
         if (res.ok) {
           setCurrentDrugs((prev) => prev.filter((el) => el.id !== drugId));
+        }
+      })
+      .catch(() => console.log('Error'));
+  };
+
+  const submitHandler = async () => {
+    await fetch('/bascket/deleteAll', {
+      method: 'DELETE',
+    })
+      .then((res) => {
+        if (res.ok) {
+          setCurrentDrugs([]);
         }
       })
       .catch(() => console.log('Error'));
@@ -65,7 +76,7 @@ export default function Bascket({ drugs, user }) {
             руб.
           </div>
 
-          <button className="btn btn-primary" type="button">Оформить заказ</button>
+          <button onClick={submitHandler} className="btn btn-primary" type="button">Оформить заказ</button>
 
         </div>
       </div>
