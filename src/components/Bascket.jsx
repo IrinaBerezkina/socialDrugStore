@@ -24,7 +24,7 @@ export default function Bascket({ drugs, user }) {
       <div className="smallCont">
         <div className="row pt=5 mb=15">
           <div>
-            <h4 className="headerOfBascket">
+            <h4 className="headerOfBascket headerToGreet">
               {!user ? (
                 'Hello, Guest!'
               ) : (

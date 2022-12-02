@@ -192,13 +192,24 @@ button:focus {
 
 .headerOfBascket {
     margin-top: 20px;
+    color: #008080;
 }
 
 .description {
     font-size: 18px;
     font-weight: 700;
+    color: #026a6a
 }
 
 .heading {
     color: #008080;
+}
+
+.input-group-text {
+    background-color: rgb(210, 162, 100) !important;
+}
+
+.headerToGreet {
+    color: rgb(210, 162, 100) !important;
+    font-weight: 700;
 }

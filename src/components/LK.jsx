@@ -49,7 +49,7 @@ export default function LK({ user }) {
         {!user ? (
           'Привет, Guest!'
         ) : (
-          `Привет,  ${input.login}!
+          `Добрый день,  ${input.login}!
           Тут вы можете изменить свои данные`
         )}
         <div className="card mt-3 mb-3" style={{ width: '18rem' }}>
