@@ -22,18 +22,18 @@ export default function Bascket({ drugs, user }) {
   return (
     <div className="bigCont">
       <div className="smallCont">
-        <div className="row mt=5 mb=15">
+        <div className="row pt=5 mb=15">
           <div>
-            <h4>
+            <h4 className="headerOfBascket">
               {!user ? (
                 'Hello, Guest!'
               ) : (
-                `Dear ${input?.login}, here is your Basket:`
+                `Дорогой ${input?.login}, проверьте свою корзину:`
               )}
             </h4>
           </div>
           <div>
-            <h4>Платные лекарства</h4>
+            <h4 className="headerOfBascket">Платные лекарства</h4>
             {currentDrugs?.filter((el) => !el.is_free).map((el) => (
               <DrugCard
                 key={el.id}
@@ -46,7 +46,7 @@ export default function Bascket({ drugs, user }) {
         </div>
 
         <div>
-          <h4>Бесплатные лекарства</h4>
+          <h4 className="headerOfBascket">Бесплатные лекарства</h4>
           {currentDrugs?.filter((el) => el.is_free).map((el) => (
             <DrugCard
               key={el.id}

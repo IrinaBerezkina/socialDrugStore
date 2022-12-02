@@ -30,7 +30,6 @@
 .backgroundCatalog{
     display: flex;
     justify-content: center;
-    background-color: white;
 }
 
 .calendarAndRandomCard {
@@ -159,7 +158,6 @@ button:hover {
 
 .bascketSummary{
     margin: 30px 15px;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,4 +166,39 @@ button:hover {
 
 .summary {
 margin-right: 20px;
+}
+
+.contForLK {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    background-color: rgba(250, 235, 215, 0.464);
+    font-size: 20px;
+}
+
+button {
+    color:aliceblueb !important;
+    background-color: #008080 !important;
+    border: 1px solid antiquewhite !important;
+}
+
+button:focus {
+    background-color: #008080 !important
+}
+
+.backgroundForLK {
+    background: url(../images/phon.png);
+}
+
+.headerOfBascket {
+    margin-top: 20px;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.heading {
+    color: #008080;
 }

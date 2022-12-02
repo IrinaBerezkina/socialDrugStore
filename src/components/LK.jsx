@@ -16,8 +16,8 @@ export default function LK({ user }) {
 
   const editHandler = async () => {
     setIsEdit((prev) => !prev);
-    // if ((input.login !== user.login) || (input.email !== user.email)) {
-    if ((input.login || input.email) !== (user.login || user.email)) {
+    if ((input.login !== user.login) || (input.email !== user.email)) {
+    // if ((input.login || input.email) !== (user.login || user.email)) {
       const response = await fetch(
         `/lk/${user.id}`,
         {
@@ -44,34 +44,37 @@ export default function LK({ user }) {
   };
 
   return (
-    <div className="Container mt-3">
-      {!user ? (
-        'Hello, Guest!'
-      ) : (
-        `Hello, ${input.login}!`
-      )}
-      <div className="card mt-3 mb-3" style={{ width: '18rem' }}>
-        {isEdit ? (
-          <label htmlFor="login">
-            Login:
-            <input type="text" id="login" name="login" onChange={changeHandler} value={input.login} />
-          </label>
-        ) : input.login}
-      </div>
-      <div className="card mt-3 mb-3" style={{ width: '18rem' }}>
-        {isEdit ? (
-          <label htmlFor="email">
-            Email
-            <input id="email" type="text" name="email" onChange={changeHandler} value={input.email} />
-          </label>
-        ) : input.email}
-      </div>
-      <div className="mt-3 mb-3">
-        {!isEdit && <button type="button" onClick={editProxyHandler}>Edit</button>}
-        {isEdit && (<button type="button" onClick={editHandler}>Save</button>)}
+    <div className="bigCont backgroundForLK">
+      <div className="smallCont contForLK">
+        {!user ? (
+          'Привет, Guest!'
+        ) : (
+          `Привет,  ${input.login}!
+          Тут вы можете изменить свои данные`
+        )}
+        <div className="card mt-3 mb-3" style={{ width: '18rem' }}>
+          {isEdit ? (
+            <label htmlFor="login">
+              Login:
+              <input type="text" id="login" name="login" onChange={changeHandler} value={input.login} />
+            </label>
+          ) : input.login}
+        </div>
+        <div className="card mt-3 mb-3" style={{ width: '18rem' }}>
+          {isEdit ? (
+            <label htmlFor="email">
+              Email
+              <input id="email" type="text" name="email" onChange={changeHandler} value={input.email} />
+            </label>
+          ) : input.email}
+        </div>
+        <div className="mt-3 mb-3">
+          {!isEdit && <button type="button" className="btn btn-primary" onClick={editProxyHandler}>Изменить</button>}
+          {isEdit && (<button type="button" className="btn btn-primary" onClick={editHandler}>Сохранить</button>)}
+
+        </div>
 
       </div>
-
     </div>
   );
 }
