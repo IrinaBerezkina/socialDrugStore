@@ -3,6 +3,7 @@ import DrugCard from './DrugCard';
 
 export default function RandomCards({ drug, data }) {
   const [randomDrugs, setRandomDrugs] = useState(drug);
+  console.log('/////////////////////////////', randomDrugs);
 
   const getRandomCards = (arr) => {
     const res = new Set([]);
@@ -18,7 +19,7 @@ export default function RandomCards({ drug, data }) {
   }, [data]);
   const submitHandler = async (e, drugId) => {
     e.preventDefault();
-    const response = await fetch('/bascket', {
+    await fetch('/bascket', {
       method: 'POST',
       headers: {
         'content-Type': 'application/json',

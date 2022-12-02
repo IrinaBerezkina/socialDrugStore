@@ -28,6 +28,7 @@ router.post('/reg', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+  console.log(req.body, 'reQBODY');
   const { login, pass: password } = req.body;
   const currUser = await User.findOne({ where: { login } });
   const compare = await bcrypt.compare(password, currUser.pass);
