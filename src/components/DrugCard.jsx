@@ -3,7 +3,8 @@ import React from 'react';
 export default function DrugCard({
   drug, isSmall, submitHandler, deleteHandler, isFreeBasket,
 }) {
-  const sellPrice = Math.floor(drug.price * 0.8);
+  const sellPrice = (drug.price * 0.8).toFixed(1);
+  // console.log(sellPrice);
   return (
     <div className={
       isSmall
