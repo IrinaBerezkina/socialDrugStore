@@ -6,7 +6,6 @@ export default function Bascket({ drugs, user }) {
   const [input, setInput] = useState({ login: user?.login, email: user?.email });
 
   const deleteHandler = async (drugId) => {
-    // console.log(drugId, 'drugID');
     await fetch(`/bascket/del/${drugId}`, {
       method: 'DELETE',
     })

@@ -3,6 +3,7 @@ import React from 'react';
 export default function DrugCard({
   drug, isSmall, submitHandler,
 }) {
+  console.log(drug.price, 'DRUGFREE');
   const sellPrice = Math.floor(drug.price * 0.8);
   return (
     <div className="col-4 mt-5 oneCard">
