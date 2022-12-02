@@ -35,11 +35,11 @@ export default function Bascket({ drugs, user }) {
       <div className="smallCont">
         <div className="row pt=5 mb=15">
           <div>
-            <h4 className="headerOfBascket">
+            <h4 className="headerOfBascket headerToGreet">
               {!user ? (
                 'Hello, Guest!'
               ) : (
-                `Дорогой ${input?.login}, проверьте свою корзину:`
+                `${input?.login}, проверьте свою корзину:`
               )}
             </h4>
           </div>
@@ -71,7 +71,7 @@ export default function Bascket({ drugs, user }) {
         <div className="bascketSummary">
 
           <div className="summary">
-            Total Amount:
+            Сумма:
             {(currentDrugs.filter((el) => !el.is_free).reduce((acc, el) => el.price + acc, 0) * 0.8).toFixed(1)}
             руб.
           </div>
