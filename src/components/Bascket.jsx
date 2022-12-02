@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import DrugCard from './DrugCard';
 import OneDrug from './OneDrug';
 
 export default function Bascket({ drugs, user }) {
   const [currentDrugs, setCurrentDrugs] = useState(drugs);
   const [input, setInput] = useState({ login: user?.login, email: user?.email });
+  console.log(drugs);
 
   const deleteHandler = async (drugId) => {
     await fetch(`/bascket/del/${drugId}`, {
@@ -18,35 +20,55 @@ export default function Bascket({ drugs, user }) {
   };
 
   return (
-    <>
-      <div className="row mt=5 mb=15">
-        <div>
-          <h4>
-            {!user ? (
-              'Hello, Guest!'
-            ) : (
-              `Dear ${input?.login}, here is your Basket:`
-            )}
-          </h4>
+    <div className="bigCont">
+      <div className="smallCont">
+        <div className="row mt=5 mb=15">
+          <div>
+            <h4>
+              {!user ? (
+                'Hello, Guest!'
+              ) : (
+                `Dear ${input?.login}, here is your Basket:`
+              )}
+            </h4>
+          </div>
+          <div>
+            <h4>Платные лекарства</h4>
+            {currentDrugs?.filter((el) => !el.is_free).map((el) => (
+              <DrugCard
+                key={el.id}
+                drug={el}
+                deleteHandler={deleteHandler}
+              />
+            ))}
+          </div>
+
         </div>
-        {currentDrugs?.map((el) => (
-          <OneDrug
-            key={el.id}
-            drug={el}
-            deleteHandler={deleteHandler}
-          />
-        ))}
+
+        <div>
+          <h4>Бесплатные лекарства</h4>
+          {currentDrugs?.filter((el) => el.is_free).map((el) => (
+            <DrugCard
+              key={el.id}
+              drug={el}
+              deleteHandler={deleteHandler}
+              isFreeBasket
+            />
+          ))}
+        </div>
+
+        <div className="bascketSummary">
+
+          <div className="summary">
+            Total Amount:
+            {currentDrugs.filter((el) => !el.is_free).reduce((acc, el) => el.price + acc, 0)}
+            руб.
+          </div>
+
+          <button className="btn btn-primary" type="button">Оформить заказ</button>
+
+        </div>
       </div>
-      <div>
-        <h5>
-          Total Amount:
-          {currentDrugs.reduce((acc, el) => el.price + acc, 0)}
-          руб.
-        </h5>
-      </div>
-      <div className="row mt=5 mb=5">
-        <button type="button">Place an order</button>
-      </div>
-    </>
+    </div>
   );
 }

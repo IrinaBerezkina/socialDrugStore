@@ -37,23 +37,28 @@ export default function Catalog({ drug, user }) {
       headers: {
         'content-Type': 'application/json',
       },
-      body: JSON.stringify({ id: drugId }),
+      body: JSON.stringify({ id: drugId, is_free: false }),
     });
   };
 
   return (
     <>
-      <span className="input-group-text" id="basic-addon1">Сортировка по цене</span>
-      <select
-        defaultValue={false}
-        onChange={changeHahdler}
-        className="form-select"
-        aria-label="Default select example"
-      >
-        <option value={false}>По возрастанию</option>
-        <option value>По убыванию</option>
+      <div className="filter-group">
+        <div className="filters">
 
-      </select>
+          <span className="input-group-text" id="basic-addon1">Выбор по цене</span>
+          <select
+            defaultValue={false}
+            onChange={changeHahdler}
+            className="form-select"
+            aria-label="Default select example"
+          >
+            <option value={false}>По возрастанию</option>
+            <option value>По убыванию</option>
+
+          </select>
+        </div>
+      </div>
       <div className="row mt=5 catalog">
         {currentDrugs?.map((el) => (
           <DrugCard

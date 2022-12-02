@@ -1,12 +1,16 @@
 import React from 'react';
 
 export default function DrugCard({
-  drug, isSmall, submitHandler,
+  drug, isSmall, submitHandler, deleteHandler, isFreeBasket,
 }) {
   console.log(drug.price, 'DRUGFREE');
   const sellPrice = Math.floor(drug.price * 0.8);
   return (
-    <div className="col-4 mt-5 oneCard">
+    <div className={
+      isSmall
+        ? 'col-4 oneCard' : 'col-4 mt-5 oneCard'
+    }
+    >
       <div className={
         isSmall
           ? 'card smallDrugCard' : 'card drugCard'
@@ -26,27 +30,39 @@ export default function DrugCard({
                 <p className="card-text te">
                   Цена:
                   {' '}
-                  {drug.price}
+                  {isFreeBasket ? 0 : drug.price}
                   {' '}
                   руб.
                 </p>
                 <p className="card-text">
                   Цена со скидкой:
                   {' '}
-                  {sellPrice}
+                  {isFreeBasket ? 0 : sellPrice}
                   {' '}
                   руб.
                 </p>
               </>
             )}
+          {deleteHandler
+            ? (
+              <button
+                onClick={() => deleteHandler(drug?.id)}
+                className="btn btn-primary"
+                type="button"
+              >
+                Удалить
+              </button>
+            )
+            : (
+              <button
+                onClick={(e) => submitHandler(e, drug.id)}
+                className="btn btn-primary"
+                type="button"
+              >
+                {isSmall ? 'Получить' : 'Добавить в корзину'}
+              </button>
+            )}
 
-          <button
-            onClick={(e) => submitHandler(e, drug.id)}
-            className="btn btn-primary"
-            type="button"
-          >
-            {isSmall ? 'Корзина' : 'Добавить в корзину'}
-          </button>
         </div>
       </div>
     </div>
