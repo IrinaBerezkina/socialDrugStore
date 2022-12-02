@@ -61,7 +61,7 @@ export default function Bascket({ drugs, user }) {
 
           <div className="summary">
             Total Amount:
-            {currentDrugs.filter((el) => !el.is_free).reduce((acc, el) => el.price + acc, 0)}
+            {(currentDrugs.filter((el) => !el.is_free).reduce((acc, el) => el.price + acc, 0) * 0.8).toFixed(1)}
             руб.
           </div>
 
