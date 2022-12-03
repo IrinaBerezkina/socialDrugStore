@@ -29,14 +29,18 @@ router.post('/reg', async (req, res) => {
 router.post('/', async (req, res) => {
   const { login, pass: password } = req.body;
   const currUser = await User.findOne({ where: { login } });
-  const compare = await bcrypt.compare(password, currUser.pass);
-  if (compare) {
-    req.session.user = {
-      id: currUser.id,
-      login: currUser.login,
-      email: currUser.email,
-    };
-    res.sendStatus(200);
+  if (currUser) {
+    const compare = await bcrypt.compare(password, currUser.pass);
+    if (compare) {
+      req.session.user = {
+        id: currUser.id,
+        login: currUser.login,
+        email: currUser.email,
+      };
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(401);
+    }
   } else {
     res.sendStatus(401);
   }

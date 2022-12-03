@@ -12,6 +12,9 @@ export default function Login() {
     });
     if (response.ok) {
       window.location = '/';
+    } else {
+      alert('Упс, кажется вы не зарегистрированы');
+      window.location = '/auth/reg';
     }
   };
 

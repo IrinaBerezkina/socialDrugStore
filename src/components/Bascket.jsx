@@ -29,56 +29,60 @@ export default function Bascket({ drugs, user }) {
       })
       .catch(() => console.log('Error'));
   };
-
   return (
     <div className="bigCont">
       <div className="smallCont">
-        <div className="row pt=5 mb=15">
-          <div>
-            <h4 className="headerOfBascket headerToGreet">
-              {!user ? (
-                'Hello, Guest!'
-              ) : (
-                `${input?.login}, проверьте свою корзину:`
-              )}
-            </h4>
-          </div>
-          <div>
-            <h4 className="headerOfBascket">Платные лекарства</h4>
-            {currentDrugs?.filter((el) => !el.is_free).map((el) => (
-              <DrugCard
-                key={el.id}
-                drug={el}
-                deleteHandler={deleteHandler}
-              />
-            ))}
-          </div>
 
-        </div>
+        <h4 className="headerOfBascket headerToGreet">
+          {!user ? (
+            'Hello, Guest!'
+          ) : (
+            `${input?.login}, проверьте свою корзину:`
+          )}
+        </h4>
+        {currentDrugs.length ? (
+          <>
+            <div className="row pt=5 mb=15">
 
-        <div>
-          <h4 className="headerOfBascket">Бесплатные лекарства</h4>
-          {currentDrugs?.filter((el) => el.is_free).map((el) => (
-            <DrugCard
-              key={el.id}
-              drug={el}
-              deleteHandler={deleteHandler}
-              isFreeBasket
-            />
-          ))}
-        </div>
+              <div>
+                <h4 className="headerOfBascket">Платные лекарства</h4>
+                {currentDrugs?.filter((el) => !el.is_free).map((el) => (
+                  <DrugCard
+                    key={el.id}
+                    drug={el}
+                    deleteHandler={deleteHandler}
+                  />
+                ))}
+              </div>
 
-        <div className="bascketSummary">
+            </div>
 
-          <div className="summary">
-            Сумма:
-            {(currentDrugs.filter((el) => !el.is_free).reduce((acc, el) => el.price + acc, 0) * 0.8).toFixed(1)}
-            руб.
-          </div>
+            <div>
+              <h4 className="headerOfBascket">Бесплатные лекарства</h4>
+              {currentDrugs?.filter((el) => el.is_free).map((el) => (
+                <DrugCard
+                  key={el.id}
+                  drug={el}
+                  deleteHandler={deleteHandler}
+                  isFreeBasket
+                />
+              ))}
+            </div>
 
-          <button onClick={submitHandler} className="btn btn-primary" type="button">Оформить заказ</button>
+            <div className="bascketSummary">
 
-        </div>
+              <div className="summary">
+                Сумма:
+                {(currentDrugs.filter((el) => !el.is_free).reduce((acc, el) => el.price + acc, 0) * 0.8).toFixed(1)}
+                руб.
+              </div>
+
+              <button onClick={submitHandler} className="btn btn-primary" type="button">Оформить заказ</button>
+
+            </div>
+          </>
+        ) : (<p>Ваш заказ оформлен</p>)}
+
       </div>
     </div>
   );
