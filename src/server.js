@@ -26,14 +26,14 @@ app.use(express.json());
 const FileStore = store(session);
 
 const sessionConfig = {
-  name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
-  secret: process.env.SESSION_SECRET ?? 'oh_klahoma', // Секретное слово для шифрования, может быть любым
-  resave: false, // Пересохранять ли куку при каждом запросе
-  store: new FileStore(), // Место хранения сессий
-  saveUninitialized: false, // Создавать ли сессию без инициализации ключей в req.session
+  name: 'user_sid',
+  secret: process.env.SESSION_SECRET ?? 'oh_klahoma',
+  resave: false,
+  store: new FileStore(),
+  saveUninitialized: false,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 12, // Срок истечения годности куки в миллисекундах
-    httpOnly: true, // Серверная установка и удаление куки, по умолчанию true
+    maxAge: 1000 * 60 * 60 * 12,
+    httpOnly: true,
   },
 };
 

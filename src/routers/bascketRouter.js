@@ -50,7 +50,6 @@ router.delete('/del/:id', async (req, res) => {
 router.delete('/deleteAll', async (req, res) => {
   try {
     await Bascket.destroy({ where: { user_id: req.session?.user?.id } });
-
     res.sendStatus(200);
   } catch (error) {
     console.log(error);
